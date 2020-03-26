@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
 
+import './global.css'
+
+import Logon from './pages/Logon';
+
 function App() {
 
-  let [counter, setCounter] = useState(0);
-
-  function incriment() {
-    setCounter(counter + 1);
-  }
-
   return (
-    <div>
-      Contador: {counter}
-      <button onClick={incriment}>Incrimentar</button>
-    </div>
+    <Logon />
   );
 }
 
