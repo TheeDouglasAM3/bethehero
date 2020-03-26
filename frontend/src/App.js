@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function App() {
+
+  let [counter, setCounter] = useState(0);
+
+  function incriment() {
+    setCounter(counter + 1);
+  }
+
   return (
-    <h1>Hello World</h1>
+    <div>
+      Contador: {counter}
+      <button onClick={incriment}>Incrimentar</button>
+    </div>
   );
 }
 
