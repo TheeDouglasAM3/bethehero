@@ -1,4 +1,5 @@
 require ('dotenv/config');
+const path = require('path');
 
 module.exports = {
   
@@ -11,7 +12,7 @@ module.exports = {
       database: process.env.PG_DATABASE,
     },
     migrations: {
-      directory: './src/database/migrations'
+      directory: path.resolve(__dirname, 'src', 'database', 'migrations')
     },
     useNullAsDefault: true
   },
