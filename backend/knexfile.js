@@ -1,11 +1,14 @@
-// Update with your config settings.
+require ('dotenv/config');
 
 module.exports = {
-
+  
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './src/database/db.sqlite'
+      host: process.env.PG_HOST,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+      database: process.env.PG_DATABASE,
     },
     migrations: {
       directory: './src/database/migrations'
@@ -14,9 +17,12 @@ module.exports = {
   },
 
   test: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './src/database/dbtest.sqlite'
+      host: 'localhost',
+      user: 'postgres',
+      password: 'docker',
+      database: 'betheherotest',
     },
     migrations: {
       directory: './src/database/migrations'

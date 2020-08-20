@@ -21,7 +21,7 @@ module.exports = {
             whatsapp,
             city,
             uf
-        });
+        }).returning('id');
 
         return response.json({id});
     }
